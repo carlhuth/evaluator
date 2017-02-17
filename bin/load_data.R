@@ -10,8 +10,8 @@ domain_summary <- readRDS(file = "./data/domain_summary.Rds")    # domain level 
 # details on our scenarios
 domains <- read_csv("./data/domains.csv") # domain catalog
 mappings <- read_csv("./data/qualitative_mappings.csv") # qualitative translations
-capabilities <- read_csv("data/capabilities.csv") # i.e. objectives & controls
-risk_tolerances <- read_csv("data/risk_tolerances.csv") # i.e. risk tolerances
+capabilities <- read_csv("./data/capabilities.csv") # i.e. objectives & controls
+risk_tolerances <- read_csv("./data/risk_tolerances.csv") # i.e. risk tolerances
 scenarios <- read_csv("./data/scenarios.csv") %>% mutate(tef = tolower(tef), 
                                                          lm = tolower(lm), 
                                                          tc = tolower(tc))

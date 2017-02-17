@@ -1,0 +1,23 @@
+{
+  "name": "Evaluator Scenario Explorer",
+  "description": "Evaluator Scenario Explorer.",
+  "keywords": [
+    "evaluator",
+    "risk",
+    "shiny"
+  ],
+  "website": "https://github.com/davidski/evaluator/",
+  "repository": "https://github.com/davidski/evaluator/",
+  "logo": "https://raw.githubusercontent.com/davidski/evaluator/master/img/evaluator_logo_48px.png",
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": ""
+  },
+  "addons": [
+  ],
+  "buildpacks": [
+    {
+      "url": "http://github.com/virtualstaticvoid/heroku-buildpack-r.git#cedar-14-chroot"
+    }
+  ]
+}
