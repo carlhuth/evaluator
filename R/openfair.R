@@ -21,7 +21,7 @@ sample_diff <- function(func = NULL, params = NULL) {
 #' @importFrom purrr is_list
 #' @param func Function to use to simulate DIFF, defaults to `rbinom``
 #' @param params Optional parameters to pass to `func`
-#' @return List containing type ("diff"), samples (as a vector), and details (as a list).
+#' @return List containing type ("vuln"), samples (as a vector), and details (as a list).
 #' @export
 sample_vuln <- function(func = NULL, params = NULL) {
   if (is.null(func)) func <- get("rbinom", asNamespace("stats"))
@@ -56,8 +56,8 @@ detail_vuln <- function(tc, diff) {
 #' @importFrom purrr as_vector
 #' @importFrom stats median
 #' @importFrom mc2d rpert
-#' @param n Number of periods to simulate. Defaults to 0.
-#' @param func Function to use to simulate TEF, defaults to mc2d::rpert
+#' @param n Number of loss events to simulate. Defaults to 0.
+#' @param func Function to use to simulate TEF, defaults to mc2d::rpert.
 #' @param params Optional parameters to pass to `func`
 #' @return List containing type ("lm"), samples (as a vector), and details (as a list).
 #' @export
