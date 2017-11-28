@@ -96,6 +96,25 @@ test_that("Sample LM", {
                                            569057.598433507, 1069488.76293628)))
 })
 
+context("Sample LEF")
+test_that("Sample LEF works with composition function", {
+  set.seed(1234)
+  tef <- sample_tef(params = list(10, 1, 10, 20))
+  vuln <- sample_vuln(params = list(10, 1, .6))
+  dat <- sample_lef(func = compare_tef_vuln,
+             params = list(tef = tef$samples, vuln = vuln$samples))
+  expect_is(dat, "list")
+  # ensure that the list has the required elements
+  expect_equal(names(dat), c("type", "samples", "details"))
+  # ensure that the samples matches the number requested
+  expect_equal(length(dat$samples), 10)
+  # ensure that values of samples is correct
+  expect_equal(dat$samples, c(5.20876621226071, 11.3834536928631,
+                              14.8272191228827, 2.13539043294175,
+                              12.0480617647494, 0, 7.69701064151479, 0, 0,
+                              6.41214819406418))
+})
+
 context("Main simulation")
 test_that("Simulation", {
   sim <- calculate_ale(list(tef_l = 1, tef_ml=10, tef_h=100, tef_conf=4,
